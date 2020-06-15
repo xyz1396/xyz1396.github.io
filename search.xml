@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>upload 16s amplicon sequencing raw data to NCBI</title>
+    <url>/2019/06/29/upload-16s-amplicon-sequencing-raw-data-to-NCBI/</url>
+    <content><![CDATA[<h3 id="Introduction-to-16S-and-ITS-rRNA-Sequencing"><a href="#Introduction-to-16S-and-ITS-rRNA-Sequencing" class="headerlink" title="Introduction to 16S and ITS rRNA Sequencing"></a>Introduction to 16S and ITS rRNA Sequencing</h3><p>16S and Internal Transcribed Spacer (ITS) ribosomal RNA (rRNA) sequencing are common amplicon sequencing methods used to identify and compare bacteria or fungi present within a given sample. Both ITS and 16S rRNA gene sequencing are well-established methods for comparing sample phylogeny and taxonomy from complex microbiomes or environments that are difficult or impossible to study.</p>
+<h3 id="register-a-NCBI-account"><a href="#register-a-NCBI-account" class="headerlink" title="register a NCBI account"></a>register a NCBI account</h3><a id="more"></a>
+
+<p><img src="1.png" alt=""></p>
+<h3 id="click-submit"><a href="#click-submit" class="headerlink" title="click submit"></a>click submit</h3><p><img src="2.png" alt=""></p>
+<h3 id="add-bioproject"><a href="#add-bioproject" class="headerlink" title="add bioproject"></a>add bioproject</h3><p><img src="3.png" alt=""></p>
+<p><img src="4.png" alt=""></p>
+<p><img src="5.png" alt=""></p>
+<h3 id="choose-project-type-and-next-steps-in-adding-bioproject"><a href="#choose-project-type-and-next-steps-in-adding-bioproject" class="headerlink" title="choose project type and next steps in adding bioproject"></a>choose project type and next steps in adding bioproject</h3><p>choose raw data sequences and metagenome</p>
+<p><img src="6.png" alt=""></p>
+<p>sample name should contain “metagenomes”</p>
+<p><img src="7.png" alt=""></p>
+<p>don’t add biosample</p>
+<p><img src="8.png" alt=""></p>
+<h3 id="add-biosample"><a href="#add-biosample" class="headerlink" title="add biosample"></a>add biosample</h3><p><img src="9.png" alt=""></p>
+<p>choose batch biosamples</p>
+<p><img src="10.png" alt=""></p>
+<p>choose single Amplified genome sequences</p>
+<p><img src="11.png" alt=""></p>
+<p><img src="11.1.png" alt=""></p>
+<h3 id="fill-the-downloaded-metadata-file-in-Excel-format-and-submit"><a href="#fill-the-downloaded-metadata-file-in-Excel-format-and-submit" class="headerlink" title="fill the downloaded metadata file in Excel format and submit"></a>fill the downloaded metadata file in Excel format and submit</h3><p><img src="12.png" alt=""></p>
+<p><img src="16.png" alt=""></p>
+<h3 id="upload-sequence-read-archive"><a href="#upload-sequence-read-archive" class="headerlink" title="upload sequence read archive"></a>upload sequence read archive</h3><p><img src="13.png" alt=""></p>
+<p>fill the bioprogect accession</p>
+<p><img src="14.png" alt=""></p>
+<p><img src="14.1.png" alt=""></p>
+<p>fill the downloaded metadata file in Excel format and submit. Sequences<br>of different sample should be splited to different files. Every fastq<br>file or gz file should have a corresponding biosample.</p>
+<p><img src="15.png" alt=""></p>
+<p>you should install aspera plugin before upload to speed up the data<br>transmission</p>
+<p><img src="17.png" alt=""></p>
+]]></content>
+  </entry>
+</search>
