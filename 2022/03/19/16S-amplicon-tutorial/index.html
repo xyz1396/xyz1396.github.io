@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/bubble_fertilizer_logo_1024x1024.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bubble_fertilizer_logo_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bubble_fertilizer_logo_16x16.ico">
+  <link rel="mask-icon" href="/images/bubble_fertilizer_logo_1024x1024.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Import fastq to Qiime2Illumina single endSplited fastq file1234567891011121314151617181920212223242526272829303132333435QCstat&lt;-read.table(&quot;01.CleanData&#x2F;QCstat.xls&quot;,skip &#x3D; 1)colnames(QCst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="16S amplicon tutorial">
+<meta property="og:url" content="http://example.com/2022/03/19/16S-amplicon-tutorial/index.html">
+<meta property="og:site_name" content="Aerith Omics">
+<meta property="og:description" content="Import fastq to Qiime2Illumina single endSplited fastq file1234567891011121314151617181920212223242526272829303132333435QCstat&lt;-read.table(&quot;01.CleanData&#x2F;QCstat.xls&quot;,skip &#x3D; 1)colnames(QCst">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-19T17:07:06.000Z">
+<meta property="article:modified_time" content="2023-04-18T04:09:22.597Z">
+<meta property="article:author" content="XYZ">
+<meta property="article:tag" content="metagenomic">
+<meta property="article:tag" content="16s">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/03/19/16S-amplicon-tutorial/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/03/19/16S-amplicon-tutorial/","path":"2022/03/19/16S-amplicon-tutorial/","title":"16S amplicon tutorial"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>16S amplicon tutorial | Aerith Omics</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Aerith Omics</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Omics in Soil & Gut & Microbiome & Plant</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-gallery"><a href="/gallery/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>gallery</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-fastq-to-Qiime2"><span class="nav-number">1.</span> <span class="nav-text">Import fastq to Qiime2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Illumina-single-end"><span class="nav-number">1.1.</span> <span class="nav-text">Illumina single end</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Splited-fastq-file"><span class="nav-number">1.1.1.</span> <span class="nav-text">Splited fastq file</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Illumina-paried-end"><span class="nav-number">1.2.</span> <span class="nav-text">Illumina paried end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demux"><span class="nav-number">1.3.</span> <span class="nav-text">Demux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trim-adapters"><span class="nav-number">1.4.</span> <span class="nav-text">Trim adapters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-primer"><span class="nav-number">1.5.</span> <span class="nav-text">Remove primer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-Roche-454-sff-to-Qiime2"><span class="nav-number">2.</span> <span class="nav-text">Import Roche 454 sff to Qiime2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-sff2fastq"><span class="nav-number">2.1.</span> <span class="nav-text">Install sff2fastq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convert"><span class="nav-number">2.2.</span> <span class="nav-text">Convert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.3.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demux-1"><span class="nav-number">2.4.</span> <span class="nav-text">Demux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trim-adapters-1"><span class="nav-number">2.5.</span> <span class="nav-text">Trim adapters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#For-splited-sff-file"><span class="nav-number">2.6.</span> <span class="nav-text">For splited sff file</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#convert"><span class="nav-number">2.6.1.</span> <span class="nav-text">convert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Make-meta-data"><span class="nav-number">2.6.2.</span> <span class="nav-text">Make meta data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-to-qiime"><span class="nav-number">2.6.3.</span> <span class="nav-text">Import to qiime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-primer-1"><span class="nav-number">2.6.4.</span> <span class="nav-text">Remove primer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-ASV-by-dada2"><span class="nav-number">3.</span> <span class="nav-text">Get ASV by dada2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#454-single-end"><span class="nav-number">3.1.</span> <span class="nav-text">454 single end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#illumina-paired-end"><span class="nav-number">3.2.</span> <span class="nav-text">illumina paired end</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-ASV-by-deblur"><span class="nav-number">4.</span> <span class="nav-text">Get ASV by deblur</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cluster-Feature"><span class="nav-number">5.</span> <span class="nav-text">Cluster Feature</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Make-annotation-database"><span class="nav-number">6.</span> <span class="nav-text">Make annotation database</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Species-annotation"><span class="nav-number">7.</span> <span class="nav-text">Species annotation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Export-OTU-table-and-sequence"><span class="nav-number">8.</span> <span class="nav-text">Export OTU table and sequence</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Select-OTU-with-more-than-1-sequence"><span class="nav-number">9.</span> <span class="nav-text">Select OTU with more than 1 sequence</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="XYZ"
+      src="/images/bubble_fertilizer_logo_1024x1024.png">
+  <p class="site-author-name" itemprop="name">XYZ</p>
+  <div class="site-description" itemprop="description">This blog is about tools for metagenomic and metaproteomic and stable isotope probing research</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xyz1396" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xyz1396" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/xiongyi88" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;xiongyi88" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/19/16S-amplicon-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bubble_fertilizer_logo_1024x1024.png">
+      <meta itemprop="name" content="XYZ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aerith Omics">
+      <meta itemprop="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="16S amplicon tutorial | Aerith Omics">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          16S amplicon tutorial
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-19 13:07:06" itemprop="dateCreated datePublished" datetime="2022-03-19T13:07:06-04:00">2022-03-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-18 00:09:22" itemprop="dateModified" datetime="2023-04-18T00:09:22-04:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/16S/" itemprop="url" rel="index"><span itemprop="name">16S</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Import-fastq-to-Qiime2"><a href="#Import-fastq-to-Qiime2" class="headerlink" title="Import fastq to Qiime2"></a>Import fastq to Qiime2</h1><h2 id="Illumina-single-end"><a href="#Illumina-single-end" class="headerlink" title="Illumina single end"></a>Illumina single end</h2><h3 id="Splited-fastq-file"><a href="#Splited-fastq-file" class="headerlink" title="Splited fastq file"></a>Splited fastq file</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">QCstat<span class="operator">&lt;-</span>read.table<span class="punctuation">(</span><span class="string">&quot;01.CleanData/QCstat.xls&quot;</span><span class="punctuation">,</span>skip <span class="operator">=</span> <span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>QCstat<span class="punctuation">)</span> <span class="operator">&lt;-</span></span><br><span class="line">  <span class="built_in">c</span><span class="punctuation">(</span></span><br><span class="line">    <span class="string">&#x27;Sample Name&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Raw PE(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Combined(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Qualified(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Nochime(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Base(nt)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;AvgLen(nt)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Q20&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Q30&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;GC%&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Effective%&#x27;</span></span><br><span class="line">  <span class="punctuation">)</span></span><br><span class="line">sampleName<span class="operator">&lt;-</span>QCstat<span class="operator">$</span>`Sample Name`</span><br><span class="line">df <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  `sample-id` <span class="operator">=</span> sampleName<span class="punctuation">,</span></span><br><span class="line">  `absolute-filepath` <span class="operator">=</span> paste0<span class="punctuation">(</span></span><br><span class="line">    <span class="string">&quot;/mnt/e/xiongyi/Chile/01.CleanData/&quot;</span><span class="punctuation">,</span></span><br><span class="line">    sampleName<span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;/&quot;</span><span class="punctuation">,</span></span><br><span class="line">    sampleName<span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;.fastq&quot;</span></span><br><span class="line">  <span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>df<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;sample-id&quot;</span><span class="punctuation">,</span> <span class="string">&quot;absolute-filepath&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span></span><br><span class="line">  df<span class="punctuation">,</span></span><br><span class="line">  <span class="string">&quot;metadata.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="built_in">quote</span> <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line"><span class="built_in">mkdir</span> qualityTest</span><br><span class="line"><span class="built_in">cd</span> qualityTest</span><br><span class="line">fastp -i ../01.CleanData/D1/D1.fastq -o D1.filterd.fq</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://view.qiime2.org/">View qzv file</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> <span class="string">&#x27;SampleData[SequencesWithQuality]&#x27;</span> \</span><br><span class="line">  --input-path metadata.tsv \</span><br><span class="line">  --output-path chile.qza \</span><br><span class="line">  --input-format SingleEndFastqManifestPhred33V2</span><br><span class="line"></span><br><span class="line"><span class="comment"># check quality</span></span><br><span class="line">qiime demux summarize \</span><br><span class="line">    --i-data chile.qza \</span><br><span class="line">    --o-visualization chileSummary.qzv</span><br></pre></td></tr></table></figure>
+
+<h2 id="Illumina-paried-end"><a href="#Illumina-paried-end" class="headerlink" title="Illumina paried end"></a>Illumina paried end</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> MultiplexedPairedEndBarcodeInSequence \</span><br><span class="line">  --input-path ../data/fastq \</span><br><span class="line">  --output-path ../temp/multiplexed-seqs.qza</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">df<span class="operator">&lt;-</span>read.table<span class="punctuation">(</span><span class="string">&quot;../data/mapping.txt&quot;</span><span class="punctuation">,</span>header <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line">df2<span class="operator">&lt;-</span>data.frame<span class="punctuation">(</span></span><br><span class="line">  `sample-id` <span class="operator">=</span> paste0<span class="punctuation">(</span><span class="string">&quot;J&quot;</span><span class="punctuation">,</span>df<span class="operator">$</span>V1<span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  barcode<span class="operator">=</span>df<span class="operator">$</span>V2</span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>df2<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;sample-id&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Barcode&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span></span><br><span class="line">  df2<span class="punctuation">,</span></span><br><span class="line">  <span class="string">&quot;../data/metadata.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="built_in">quote</span> <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Demux"><a href="#Demux" class="headerlink" title="Demux"></a>Demux</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line"><span class="comment"># change tmp path</span></span><br><span class="line"><span class="comment"># export TMPDIR=/mnt/f/qiimeTMP </span></span><br><span class="line">qiime cutadapt demux-paired \</span><br><span class="line">  --i-seqs ../temp/multiplexed-seqs.qza \</span><br><span class="line">  --m-forward-barcodes-file ../data/metadata.tsv \</span><br><span class="line">  --m-forward-barcodes-column Barcode \</span><br><span class="line">  --p-error-rate 0 \</span><br><span class="line">  --o-per-sample-sequences ../temp/demultiplexed-seqs.qza \</span><br><span class="line">  --o-untrimmed-sequences ../temp/untrimmed.qza \</span><br><span class="line">  --verbose &amp;&gt; ../temp/demux.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="Trim-adapters"><a href="#Trim-adapters" class="headerlink" title="Trim adapters"></a>Trim adapters</h2><p>Note: This adapter seq is as same as the forward primer</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime cutadapt trim-paired \</span><br><span class="line">  --i-demultiplexed-sequences ../temp/demultiplexed-seqs.qza \</span><br><span class="line">  --p-front-f GTGCCAGCMGCCGCGG \</span><br><span class="line">  --p-error-rate 0 \</span><br><span class="line">  --o-trimmed-sequences ../temp/trimmed-seqs.qza \</span><br><span class="line">  --verbose &amp;&gt; ../temp/trim.txt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime demux summarize \</span><br><span class="line">  --i-data ../temp/trimmed-seqs.qza \</span><br><span class="line">  --o-visualization ../temp/trimmed-seqs.qzv</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-primer"><a href="#Remove-primer" class="headerlink" title="Remove primer"></a>Remove primer</h2><p>515F GTGCCAGCMGCCGCGG 907R CCGTCAATTCMTTTRAGTTT</p>
+<p>remove sequence shorter than 300</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>Biostrings<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># CCGTCAATTCMTTTRAGTTT...CCGCGGCKGCTGGCAC</span></span><br><span class="line">reverseComplement<span class="punctuation">(</span>DNAString<span class="punctuation">(</span><span class="string">&quot;GTGCCAGCMGCCGCGG...AAACTYAAAKGAATTGACGG&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime cutadapt trim-paired \</span><br><span class="line">  --p-cores 6 \</span><br><span class="line">  --i-demultiplexed-sequences ../temp/trimmed-seqs.qza \</span><br><span class="line">  --p-adapter-f GTGCCAGCMGCCGCGG...AAACTYAAAKGAATTGACGG \</span><br><span class="line">  --p-adapter-r CCGTCAATTCMTTTRAGTTT...CCGCGGCKGCTGGCAC \</span><br><span class="line">  --p-error-rate 0.2 \</span><br><span class="line">  --o-trimmed-sequences ../temp/primer_trimed.qza \</span><br><span class="line">  --verbose &amp;&gt; ../temp/primer_trimed.log</span><br><span class="line">  </span><br><span class="line">qiime demux summarize \</span><br><span class="line">    --i-data ../temp/primer_trimed.qza \</span><br><span class="line">    --o-visualization ../temp/primer_trimed.qcSummary.qzv</span><br></pre></td></tr></table></figure>
+
+<h1 id="Import-Roche-454-sff-to-Qiime2"><a href="#Import-Roche-454-sff-to-Qiime2" class="headerlink" title="Import Roche 454 sff to Qiime2"></a>Import Roche 454 sff to Qiime2</h1><h2 id="Install-sff2fastq"><a href="#Install-sff2fastq" class="headerlink" title="Install sff2fastq"></a>Install sff2fastq</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github link format for private project</span></span><br><span class="line"><span class="comment"># git@github.com:xyz1396/454pipeline.git</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">git <span class="built_in">clone</span> git://github.com/indraniel/sff2fastq.git</span><br><span class="line"><span class="built_in">cd</span> sff2fastq</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<h2 id="Convert"><a href="#Convert" class="headerlink" title="Convert"></a>Convert</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">/mnt/e/xiongyi/454Data_JiaLab-2020.12.31/from454sff/sff2fastq/sff2fastq \</span><br><span class="line">  -o qu1.fq \</span><br><span class="line">  JDH5BEV01qu1.sff</span><br><span class="line">/mnt/e/xiongyi/454Data_JiaLab-2020.12.31/from454sff/sff2fastq/sff2fastq \</span><br><span class="line">  -o qu2.fq \</span><br><span class="line">  JDH5BEV02qu2.sff</span><br><span class="line"><span class="built_in">cat</span> qu*.fq &gt; all.fq</span><br><span class="line"><span class="comment"># some base is Q, dada2 cannot parse it</span></span><br><span class="line">seqkit grep -s -p <span class="string">&#x27;Q&#x27;</span> all.fq &gt; all.error.fq</span><br><span class="line">seqkit grep -s -v -p <span class="string">&#x27;Q&#x27;</span> all.fq &gt; all.fix.fq</span><br></pre></td></tr></table></figure>
+
+<h2 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">gzip -c all.fix.fq &gt; all.fastq.gz</span><br><span class="line">qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> MultiplexedSingleEndBarcodeInSequence \</span><br><span class="line">  --input-path all.fastq.gz \</span><br><span class="line">  --output-path multiplexed-seqs.qza</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>readxl<span class="punctuation">)</span></span><br><span class="line">df<span class="operator">&lt;-</span>read_xlsx<span class="punctuation">(</span><span class="string">&quot;sampleList.xlsx&quot;</span><span class="punctuation">)</span></span><br><span class="line">df2<span class="operator">&lt;-</span>data.frame<span class="punctuation">(</span></span><br><span class="line">  `sample-id` <span class="operator">=</span> paste0<span class="punctuation">(</span><span class="string">&quot;J&quot;</span><span class="punctuation">,</span>df<span class="operator">$</span>NO.<span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  barcode<span class="operator">=</span>df<span class="operator">$</span>Tag</span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>df2<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;sample-id&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Barcode&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span></span><br><span class="line">  df2<span class="punctuation">,</span></span><br><span class="line">  <span class="string">&quot;metadata.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="built_in">quote</span> <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Demux-1"><a href="#Demux-1" class="headerlink" title="Demux"></a>Demux</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime cutadapt demux-single \</span><br><span class="line">  --i-seqs multiplexed-seqs.qza \</span><br><span class="line">  --m-barcodes-file metadata.tsv \</span><br><span class="line">  --m-barcodes-column Barcode \</span><br><span class="line">  --p-error-rate 0 \</span><br><span class="line">  --o-per-sample-sequences demultiplexed-seqs.qza \</span><br><span class="line">  --o-untrimmed-sequences untrimmed.qza \</span><br><span class="line">  --verbose</span><br></pre></td></tr></table></figure>
+
+<h2 id="Trim-adapters-1"><a href="#Trim-adapters-1" class="headerlink" title="Trim adapters"></a>Trim adapters</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime cutadapt trim-single \</span><br><span class="line">  --i-demultiplexed-sequences demultiplexed-seqs.qza \</span><br><span class="line">  --p-front GTGCCAGCMGCCGCGG \</span><br><span class="line">  --p-error-rate 0 \</span><br><span class="line">  --o-trimmed-sequences trimmed-seqs.qza \</span><br><span class="line">  --verbose</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime demux summarize \</span><br><span class="line">  --i-data trimmed-seqs.qza \</span><br><span class="line">  --o-visualization trimmed-seqs.qzv</span><br></pre></td></tr></table></figure>
+
+<h2 id="For-splited-sff-file"><a href="#For-splited-sff-file" class="headerlink" title="For splited sff file"></a>For splited sff file</h2><h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> ../data/sff/ | xargs -n 1 -P 4 \</span><br><span class="line">  bash -c <span class="string">&#x27;../sff2fastq/sff2fastq -o ../data/fastq/$0.fq ../data/sff/$0&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Make-meta-data"><a href="#Make-meta-data" class="headerlink" title="Make meta data"></a>Make meta data</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>stringr<span class="punctuation">)</span></span><br><span class="line">fileName<span class="operator">&lt;-</span>dir<span class="punctuation">(</span><span class="string">&quot;../data/fastq/&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 454Reads.MID_43.sff.fq is empty</span></span><br><span class="line">fileName<span class="operator">&lt;-</span>fileName<span class="punctuation">[</span>fileName<span class="operator">!=</span><span class="string">&quot;454Reads.MID_43.sff.fq&quot;</span><span class="punctuation">]</span></span><br><span class="line">sampleID<span class="operator">&lt;-</span>str_split<span class="punctuation">(</span>fileName<span class="punctuation">,</span><span class="string">&quot;\\.&quot;</span><span class="punctuation">,</span>simplify <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line">filePath<span class="operator">&lt;-</span>paste0<span class="punctuation">(</span><span class="string">&quot;/mnt/e/xiongyi/454Data_JiaLab-2020.12.31/from454sff/data/fastq/&quot;</span><span class="punctuation">,</span>fileName<span class="punctuation">)</span></span><br><span class="line">df <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  `sample-id` <span class="operator">=</span> sampleID<span class="punctuation">,</span></span><br><span class="line">  `absolute-filepath` <span class="operator">=</span> filePath<span class="punctuation">,</span></span><br><span class="line">  stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>df<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;sample-id&quot;</span><span class="punctuation">,</span> <span class="string">&quot;absolute-filepath&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span></span><br><span class="line">  df<span class="punctuation">,</span></span><br><span class="line">  <span class="string">&quot;../data/metadata.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="built_in">quote</span> <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Import-to-qiime"><a href="#Import-to-qiime" class="headerlink" title="Import to qiime"></a>Import to qiime</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> <span class="string">&#x27;SampleData[SequencesWithQuality]&#x27;</span> \</span><br><span class="line">  --input-path ../data/metadata.tsv \</span><br><span class="line">  --output-path ../data/fastq.qza \</span><br><span class="line">  --input-format SingleEndFastqManifestPhred33V2</span><br><span class="line"></span><br><span class="line"><span class="comment"># check quality</span></span><br><span class="line">qiime demux summarize \</span><br><span class="line">    --i-data ../data/fastq.qza \</span><br><span class="line">    --o-visualization ../temp/qcSummary.qzv</span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-primer-1"><a href="#Remove-primer-1" class="headerlink" title="Remove primer"></a>Remove primer</h3><p>515F GTGCCAGCMGCCGCGG 907R CCGTCAATTCMTTTRAGTTT</p>
+<p>remove sequence shorter than 300</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime cutadapt trim-single \</span><br><span class="line">  --p-cores 6 \</span><br><span class="line">  --i-demultiplexed-sequences ../data/fastq.qza \</span><br><span class="line">  --p-adapter GTGCCAGCMGCCGCGG...AAACTYAAAKGAATTGACGG \</span><br><span class="line">  --p-error-rate 0.2 \</span><br><span class="line">  --p-minimum-length 300 \</span><br><span class="line">  --o-trimmed-sequences ../temp/fastq.primer_trimed.qza \</span><br><span class="line">  --verbose &amp;&gt; ../temp/fastq.primer_trimed.log</span><br><span class="line">  </span><br><span class="line">qiime demux summarize \</span><br><span class="line">    --i-data ../temp/fastq.primer_trimed.qza \</span><br><span class="line">    --o-visualization ../temp/fastq.primer_trimed.qcSummary.qzv</span><br></pre></td></tr></table></figure>
+
+<h1 id="Get-ASV-by-dada2"><a href="#Get-ASV-by-dada2" class="headerlink" title="Get ASV by dada2"></a>Get ASV by dada2</h1><h2 id="454-single-end"><a href="#454-single-end" class="headerlink" title="454 single end"></a>454 single end</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime dada2 denoise-pyro \</span><br><span class="line">  --p-trunc-len 370 \</span><br><span class="line">  --i-demultiplexed-seqs primer_trimed.qza \</span><br><span class="line">  --p-n-threads 6 \</span><br><span class="line">  --o-table fastq370.table.qza \</span><br><span class="line">  --o-representative-sequences fastq370.rep-seqs.qza \</span><br><span class="line">  --o-denoising-stats fastq370.denoising-stats.qza</span><br><span class="line"></span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">    --m-input-file fastq370.denoising-stats.qza \</span><br><span class="line">    --o-visualization fastq370.denoising-stats.qzv</span><br></pre></td></tr></table></figure>
+
+<h2 id="illumina-paired-end"><a href="#illumina-paired-end" class="headerlink" title="illumina paired end"></a>illumina paired end</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">qiime dada2 denoise-paired \</span><br><span class="line">  --p-trunc-len-f 200 \</span><br><span class="line">  --p-trunc-len-r 200 \</span><br><span class="line">  --i-demultiplexed-seqs ../temp/primer_trimed.qza \</span><br><span class="line">  --p-n-threads 6 \</span><br><span class="line">  --o-table ../temp/fastq370.table.qza \</span><br><span class="line">  --o-representative-sequences ../temp/fastq370.rep-seqs.qza \</span><br><span class="line">  --o-denoising-stats ../temp/fastq370.denoising-stats.qza</span><br><span class="line">  </span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">    --m-input-file ../temp/fastq370.denoising-stats.qza \</span><br><span class="line">    --o-visualization ../temp/fastq370.denoising-stats.qzv</span><br></pre></td></tr></table></figure>
+
+<h1 id="Get-ASV-by-deblur"><a href="#Get-ASV-by-deblur" class="headerlink" title="Get ASV by deblur"></a>Get ASV by deblur</h1><p>only support single end, merge it firstly</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime vsearch merge-pairs \</span><br><span class="line">   --p-threads 6 \</span><br><span class="line">   --i-demultiplexed-seqs ../temp/primer_trimed.qza \</span><br><span class="line">   --p-minmergelen 370 \</span><br><span class="line">   --o-merged-sequences ../temp/merge.qza</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime deblur denoise-16S \</span><br><span class="line">  --p-jobs-to-start 6 \</span><br><span class="line">  --p-trim-length 370 \</span><br><span class="line">  --i-demultiplexed-seqs ../temp/merge.qza \</span><br><span class="line">  --p-sample-stats \</span><br><span class="line">  --o-representative-sequences ../temp/fastq370.rep-seqs.qza \</span><br><span class="line">  --o-table ../temp/fastq370.table.qza \</span><br><span class="line">  --o-stats ../temp/fastq370.denoising-stats.qza</span><br></pre></td></tr></table></figure>
+
+<h1 id="Cluster-Feature"><a href="#Cluster-Feature" class="headerlink" title="Cluster Feature"></a>Cluster Feature</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime vsearch cluster-features-de-novo \</span><br><span class="line">  --i-sequences fastq370.rep-seqs.qza \</span><br><span class="line">  --i-table fastq370.table.qza \</span><br><span class="line">  --p-perc-identity 0.97 \</span><br><span class="line">  --o-clustered-table fastq370.97.table.qza \</span><br><span class="line">  --o-clustered-sequences fastq370.97.seq.qza \</span><br><span class="line">  --p-threads 6</span><br></pre></td></tr></table></figure>
+
+<h1 id="Make-annotation-database"><a href="#Make-annotation-database" class="headerlink" title="Make annotation database"></a>Make annotation database</h1><p><a target="_blank" rel="noopener" href="https://docs.qiime2.org/2021.2/data-resources/">QIIME2 Data resources</a><br><a target="_blank" rel="noopener" href="https://data.qiime2.org/2021.2/common/silva-138-99-seqs.qza">Silva 138 SSURef NR99 full-length<br>sequences</a><br><a target="_blank" rel="noopener" href="https://data.qiime2.org/2021.2/common/silva-138-99-tax.qza">Silva 138 SSURef NR99 full-length<br>taxonomy</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/e/xiongyi/454Data_JiaLab-2020.12.31/2021xiongyiAnalysis/db/SILVA_138</span><br><span class="line">qiime feature-classifier extract-reads \</span><br><span class="line">  --i-sequences silva-138-99-seqs.qza \</span><br><span class="line">  --p-f-primer GTGCCAGCMGCCGCGG \</span><br><span class="line">  --p-r-primer CCGTCAATTCMTTTRAGTTT \</span><br><span class="line">  --p-min-length 200 \</span><br><span class="line">  --p-max-length 500 \</span><br><span class="line">  --o-reads silva-138-99-seqs_515F_907R.qza \</span><br><span class="line">  --p-n-jobs 5</span><br><span class="line"></span><br><span class="line">qiime feature-classifier fit-classifier-naive-bayes \</span><br><span class="line">   --i-reference-reads silva-138-99-seqs_515F_907R.qza \</span><br><span class="line">   --i-reference-taxonomy silva-138-99-tax.qza \</span><br><span class="line">   --o-classifier silva138_515F_907R_classifier.qza</span><br><span class="line">   </span><br><span class="line">qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-reads ../../denovo.clustered.seq.qza \</span><br><span class="line">  --i-classifier silva138_515F_907R_classifier.qza \</span><br><span class="line">  --o-classification ../../denovo.clustered.taxonomy.naive_bayes.qza </span><br><span class="line">  <span class="comment"># need ram larger than 32 gb</span></span><br><span class="line">  <span class="comment"># --p-n-jobs 3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Species-annotation"><a href="#Species-annotation" class="headerlink" title="Species annotation"></a>Species annotation</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-reads fastq370.97.seq.qza \</span><br><span class="line">  --i-classifier /mnt/e/xiongyi/454Data_JiaLab-2020.12.31/2021xiongyiAnalysis/db/SILVA_138/silva138_515F_907R_classifier.qza \</span><br><span class="line">  --o-classification denovo.clustered.naive_bayes_taxonomy.qza \</span><br><span class="line">  --p-n-jobs 1</span><br></pre></td></tr></table></figure>
+
+<h1 id="Export-OTU-table-and-sequence"><a href="#Export-OTU-table-and-sequence" class="headerlink" title="Export OTU table and sequence"></a>Export OTU table and sequence</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line">qiime tools <span class="built_in">export</span> \</span><br><span class="line">  --input-path fastq370.97.seq.qza \</span><br><span class="line">  --output-path .</span><br><span class="line"></span><br><span class="line">qiime tools <span class="built_in">export</span> \</span><br><span class="line">  --input-path fastq370.97.table.qza \</span><br><span class="line">  --output-path .</span><br><span class="line">  </span><br><span class="line">biom convert -i feature-table.biom \</span><br><span class="line">  -o feature-table.tsv --to-tsv</span><br><span class="line">  </span><br><span class="line">qiime tools <span class="built_in">export</span> \</span><br><span class="line">  --input-path denovo.clustered.naive_bayes_taxonomy.qza \</span><br><span class="line">  --output-path .</span><br></pre></td></tr></table></figure>
+
+<h1 id="Select-OTU-with-more-than-1-sequence"><a href="#Select-OTU-with-more-than-1-sequence" class="headerlink" title="Select OTU with more than 1 sequence"></a>Select OTU with more than 1 sequence</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>tidyverse<span class="punctuation">)</span></span><br><span class="line">otu <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;feature-table.tsv&quot;</span><span class="punctuation">,</span>header <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span></span><br><span class="line">                  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span><span class="punctuation">,</span>comment.char<span class="operator">=</span><span class="string">&quot;&quot;</span><span class="punctuation">,</span>skip<span class="operator">=</span><span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>otu<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="operator">&lt;-</span><span class="string">&quot;OTU.ID&quot;</span></span><br><span class="line">tax <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;taxonomy.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">                  header <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span></span><br><span class="line">                  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 3 OTU without annotation</span></span><br><span class="line"><span class="built_in">sum</span><span class="punctuation">(</span>tax<span class="operator">$</span>Taxon <span class="operator">==</span> <span class="string">&quot;Unassigned&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># tax&lt;-tax[tax$Taxon != &quot;Unassigned&quot;,]</span></span><br><span class="line"><span class="built_in">sum</span><span class="punctuation">(</span><span class="built_in">is.na</span><span class="punctuation">(</span>tax<span class="operator">$</span>Taxon<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">rankTaxon <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>Taxon <span class="operator">=</span> tax<span class="operator">$</span>Taxon<span class="punctuation">)</span></span><br><span class="line">rankTaxon <span class="operator">&lt;-</span></span><br><span class="line">  separate<span class="punctuation">(</span>rankTaxon<span class="punctuation">,</span> Taxon<span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;; &quot;</span><span class="punctuation">,</span> into <span class="operator">=</span> <span class="built_in">as.character</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">7</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>rankTaxon<span class="punctuation">)</span> <span class="operator">&lt;-</span></span><br><span class="line">  <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Kingdom&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Phylum&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Class&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Order&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Family&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Genus&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;Species&quot;</span><span class="punctuation">)</span></span><br><span class="line">rankTaxon <span class="operator">&lt;-</span> cbind<span class="punctuation">(</span>id <span class="operator">=</span> tax<span class="operator">$</span>Feature.ID<span class="punctuation">,</span></span><br><span class="line">                   rankTaxon<span class="punctuation">,</span></span><br><span class="line">                   Confidence <span class="operator">=</span> tax<span class="operator">$</span>Confidence<span class="punctuation">)</span></span><br><span class="line">otuWithTax <span class="operator">&lt;-</span> right_join<span class="punctuation">(</span>otu<span class="punctuation">,</span> rankTaxon<span class="punctuation">,</span> by <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;OTU.ID&quot;</span> <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">totalCount <span class="operator">&lt;-</span> rowSums<span class="punctuation">(</span>otuWithTax<span class="punctuation">[</span><span class="punctuation">,</span> <span class="number">2</span><span class="operator">:</span>ncol<span class="punctuation">(</span>otu<span class="punctuation">)</span><span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line">totalPercent <span class="operator">&lt;-</span> totalCount <span class="operator">/</span> <span class="built_in">sum</span><span class="punctuation">(</span>totalCount<span class="punctuation">)</span> <span class="operator">*</span> <span class="number">100</span></span><br><span class="line">otuWithTax<span class="operator">$</span>totalCount <span class="operator">&lt;-</span> totalCount</span><br><span class="line">otuWithTax<span class="operator">$</span>totalPercent <span class="operator">&lt;-</span> totalPercent</span><br><span class="line">otuWithTax <span class="operator">&lt;-</span> arrange<span class="punctuation">(</span>otuWithTax<span class="punctuation">,</span> desc<span class="punctuation">(</span>totalCount<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">otuWithTax<span class="operator">$</span>OTU.IX<span class="operator">&lt;-</span>paste0<span class="punctuation">(</span><span class="string">&quot;OTU&quot;</span><span class="punctuation">,</span><span class="number">1</span><span class="operator">:</span>nrow<span class="punctuation">(</span>otuWithTax<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">otuWithTax<span class="operator">&lt;-</span>otuWithTax<span class="punctuation">[</span>otuWithTax<span class="operator">$</span>totalCount <span class="operator">&gt;</span> <span class="number">1</span><span class="punctuation">,</span><span class="punctuation">]</span></span><br><span class="line">write.csv<span class="punctuation">(</span>otuWithTax<span class="punctuation">,</span></span><br><span class="line">          <span class="string">&quot;OTUByNaive_bayesSortByOneMore.csv&quot;</span><span class="punctuation">,</span></span><br><span class="line">          row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 10787 OTU with more than 1 sequences </span></span><br><span class="line"><span class="built_in">sum</span><span class="punctuation">(</span>otuWithTax<span class="operator">$</span>totalCount <span class="operator">&gt;</span> <span class="number">1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/metagenomic/" rel="tag"># metagenomic</a>
+              <a href="/tags/16s/" rel="tag"># 16s</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/23/upload-16s-amplicon-sequencing-raw-data-to-NCBI/" rel="prev" title="Upload 16s amplicon sequencing raw data to NCBI">
+                  <i class="fa fa-chevron-left"></i> Upload 16s amplicon sequencing raw data to NCBI
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/16/shotgun-metagenomic-tutorial/" rel="next" title="Shotgun metagenomic tutorial">
+                  Shotgun metagenomic tutorial <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XYZ All Rights Reserved</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">4k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">14 mins.</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

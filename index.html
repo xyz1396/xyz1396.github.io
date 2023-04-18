@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/bubble_fertilizer_logo_1024x1024.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bubble_fertilizer_logo_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bubble_fertilizer_logo_16x16.ico">
+  <link rel="mask-icon" href="/images/bubble_fertilizer_logo_1024x1024.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aerith Omics">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Aerith Omics">
+<meta property="og:description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="XYZ">
+<meta property="article:tag" content="soil, plant, gut, microbiome, metagenomic, proteomic, 16S, SIP">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Aerith Omics</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Aerith Omics</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Omics in Soil & Gut & Microbiome & Plant</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-gallery"><a href="/gallery/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>gallery</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="XYZ"
+      src="/images/bubble_fertilizer_logo_1024x1024.png">
+  <p class="site-author-name" itemprop="name">XYZ</p>
+  <div class="site-description" itemprop="description">This blog is about tools for metagenomic and metaproteomic and stable isotope probing research</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xyz1396" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xyz1396" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/xiongyi88" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;xiongyi88" rel="noopener me" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/17/Sipros-stable-isotope-probe-13C-labeled-metaproteomic-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bubble_fertilizer_logo_1024x1024.png">
+      <meta itemprop="name" content="XYZ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aerith Omics">
+      <meta itemprop="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Aerith Omics">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/17/Sipros-stable-isotope-probe-13C-labeled-metaproteomic-tutorial/" class="post-title-link" itemprop="url">Sipros stable isotope probe 13C labeled metaproteomic tutorial</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-04-17 23:15:08" itemprop="dateCreated datePublished" datetime="2023-04-17T23:15:08-04:00">2023-04-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-18 00:17:30" itemprop="dateModified" datetime="2023-04-18T00:17:30-04:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/metagenomic/" itemprop="url" rel="index"><span itemprop="name">metagenomic</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/metagenomic/proteomic/" itemprop="url" rel="index"><span itemprop="name">proteomic</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/metagenomic/proteomic/metaproteomic/" itemprop="url" rel="index"><span itemprop="name">metaproteomic</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/metagenomic/proteomic/metaproteomic/SIP/" itemprop="url" rel="index"><span itemprop="name">SIP</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>617</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This tutorial shows how to perform stable isotope labeling (SIP) proteomics search using Sipros on 13C-labeled E. coli DDA mass spectrometry data. This workflow works on WSL Ubuntu 20.04 in Windows 11 and CentOS 7.</p>
+<h3 id="Install-environment"><a href="#Install-environment" class="headerlink" title="Install environment"></a>Install environment</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py2 scikit-learn python=2.7</span><br><span class="line">conda create -n mono -c conda-forge mono</span><br><span class="line">conda create -n r -c conda-forge -c bioconda r-base r-stringr r-tidyr bioconductor-biostrings</span><br></pre></td></tr></table></figure>
+
+<h3 id="Make-folder-for-the-workflow"><a href="#Make-folder-for-the-workflow" class="headerlink" title="Make folder for the workflow"></a>Make folder for the workflow</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir fasta raw ft regular sip configs bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="Download-raw-file"><a href="#Download-raw-file" class="headerlink" title="Download raw file"></a>Download raw file</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd raw</span><br><span class="line"># Download raw file with 1% 13C</span><br><span class="line">wget ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD041414/Pan_062822_X1iso5.raw</span><br><span class="line"># Download raw file with 50% 13C</span><br><span class="line">wget ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2023/04/PXD041414/Pan_052322_X13.raw</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/04/17/Sipros-stable-isotope-probe-13C-labeled-metaproteomic-tutorial/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/shotgun-metagenomic-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bubble_fertilizer_logo_1024x1024.png">
+      <meta itemprop="name" content="XYZ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aerith Omics">
+      <meta itemprop="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Aerith Omics">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/08/16/shotgun-metagenomic-tutorial/" class="post-title-link" itemprop="url">Shotgun metagenomic tutorial</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-08-16 20:11:04" itemprop="dateCreated datePublished" datetime="2022-08-16T20:11:04-04:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-18 00:15:45" itemprop="dateModified" datetime="2023-04-18T00:15:45-04:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/metagenomic/" itemprop="url" rel="index"><span itemprop="name">metagenomic</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Install-metawrap"><a href="#Install-metawrap" class="headerlink" title="Install metawrap"></a>Install metawrap</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Express Installation</span></span><br><span class="line">conda create --name metawrap --channel ursky metawrap-mg=1.3.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># fix error</span></span><br><span class="line"><span class="comment"># Can&#x27;t locate Bio/Root/Version.pm in </span></span><br><span class="line"><span class="comment"># @INC (you may need to install the Bio::Root::Version module)</span></span><br><span class="line"><span class="built_in">cd</span> ~/miniconda3/envs/metawrap</span><br><span class="line"><span class="built_in">ln</span> -s lib/perl5/site_perl/5.22.0/ perl5</span><br><span class="line"><span class="built_in">which</span> config-metawrap</span><br><span class="line"><span class="built_in">cp</span> ~/config-metawrap ~/miniconda3/envs/metawrap/bin/config-metawrap</span><br><span class="line"></span><br><span class="line"><span class="comment"># fix bowtie2-build-s: symbol lookup error, undefined symbol</span></span><br><span class="line">conda install tbb=2020.2</span><br><span class="line"></span><br><span class="line">conda activate metawrap</span><br></pre></td></tr></table></figure>
+
+<h2 id="Insall-blast-DB"><a href="#Insall-blast-DB" class="headerlink" title="Insall blast DB"></a>Insall blast DB</h2><p><a target="_blank" rel="noopener" href="https://www.ibm.com/aspera/connect/">Aspera download link</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">ftp</span><br><span class="line">open ftp.ncbi.nlm.nih.gov</span><br><span class="line"><span class="comment"># user</span></span><br><span class="line">anonymous</span><br><span class="line"><span class="built_in">cd</span> /blast/db/</span><br><span class="line">passive</span><br><span class="line">mls nt.*.tar.gz download.list.txt</span><br><span class="line"><span class="built_in">cd</span> /blast/db/v4/</span><br><span class="line">mls nt_v4.*.tar.gz downloadV4.list.txt</span><br><span class="line"><span class="built_in">bye</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">nohup</span> <span class="built_in">cat</span> NCBI.nt.download.list.txt | \</span><br><span class="line">  xargs -n 1 -P 1 \</span><br><span class="line">  bash -c <span class="string">&#x27;~/.aspera/connect/bin/ascp -v -k 1 -T -l `</span></span><br><span class="line"><span class="string">          `1000m -i ~/asperaweb_id_dsa.openssh `</span></span><br><span class="line"><span class="string">          anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/$0 ./&#x27;</span> \</span><br><span class="line">  &gt;&gt; downloadlog.txt 2&gt;&amp;1 &amp;</span><br><span class="line">  </span><br><span class="line"><span class="built_in">nohup</span> <span class="built_in">cat</span> downloadV4.list.txt | \</span><br><span class="line">  xargs -n 1 -P 1 \</span><br><span class="line">  bash -c <span class="string">&#x27;~/.aspera/connect/bin/ascp -v -k 1 -T -l `</span></span><br><span class="line"><span class="string">          `1000m -i ~/asperaweb_id_dsa.openssh `</span></span><br><span class="line"><span class="string">          anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/v4/$0 ./&#x27;</span> \</span><br><span class="line">  &gt;&gt; downloadlog.txt 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> nt*.tar.gz; <span class="keyword">do</span> tar xzf <span class="variable">$a</span>; <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">vim ~/miniconda3/envs/metawrap/bin/config-metawrap</span><br><span class="line">  </span><br><span class="line">~/.aspera/connect/bin/ascp -v -k 1 -T -l 1000m \</span><br><span class="line">  -i ~/asperaweb_id_dsa.openssh \</span><br><span class="line">  anonftp@ftp.ncbi.nlm.nih.gov:/pub/taxonomy/taxdump.tar.gz ./</span><br><span class="line">tar -xvf taxdump.tar.gz</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/08/16/shotgun-metagenomic-tutorial/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/19/16S-amplicon-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bubble_fertilizer_logo_1024x1024.png">
+      <meta itemprop="name" content="XYZ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aerith Omics">
+      <meta itemprop="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Aerith Omics">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/19/16S-amplicon-tutorial/" class="post-title-link" itemprop="url">16S amplicon tutorial</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-19 13:07:06" itemprop="dateCreated datePublished" datetime="2022-03-19T13:07:06-04:00">2022-03-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-18 00:09:22" itemprop="dateModified" datetime="2023-04-18T00:09:22-04:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/16S/" itemprop="url" rel="index"><span itemprop="name">16S</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Import-fastq-to-Qiime2"><a href="#Import-fastq-to-Qiime2" class="headerlink" title="Import fastq to Qiime2"></a>Import fastq to Qiime2</h1><h2 id="Illumina-single-end"><a href="#Illumina-single-end" class="headerlink" title="Illumina single end"></a>Illumina single end</h2><h3 id="Splited-fastq-file"><a href="#Splited-fastq-file" class="headerlink" title="Splited fastq file"></a>Splited fastq file</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">QCstat<span class="operator">&lt;-</span>read.table<span class="punctuation">(</span><span class="string">&quot;01.CleanData/QCstat.xls&quot;</span><span class="punctuation">,</span>skip <span class="operator">=</span> <span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>QCstat<span class="punctuation">)</span> <span class="operator">&lt;-</span></span><br><span class="line">  <span class="built_in">c</span><span class="punctuation">(</span></span><br><span class="line">    <span class="string">&#x27;Sample Name&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Raw PE(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Combined(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Qualified(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Nochime(#)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Base(nt)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;AvgLen(nt)&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Q20&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Q30&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;GC%&#x27;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&#x27;Effective%&#x27;</span></span><br><span class="line">  <span class="punctuation">)</span></span><br><span class="line">sampleName<span class="operator">&lt;-</span>QCstat<span class="operator">$</span>`Sample Name`</span><br><span class="line">df <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span></span><br><span class="line">  `sample-id` <span class="operator">=</span> sampleName<span class="punctuation">,</span></span><br><span class="line">  `absolute-filepath` <span class="operator">=</span> paste0<span class="punctuation">(</span></span><br><span class="line">    <span class="string">&quot;/mnt/e/xiongyi/Chile/01.CleanData/&quot;</span><span class="punctuation">,</span></span><br><span class="line">    sampleName<span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;/&quot;</span><span class="punctuation">,</span></span><br><span class="line">    sampleName<span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;.fastq&quot;</span></span><br><span class="line">  <span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">  stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line">colnames<span class="punctuation">(</span>df<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;sample-id&quot;</span><span class="punctuation">,</span> <span class="string">&quot;absolute-filepath&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span></span><br><span class="line">  df<span class="punctuation">,</span></span><br><span class="line">  <span class="string">&quot;metadata.tsv&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="built_in">quote</span> <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span></span><br><span class="line">  sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/miniconda3/etc/profile.d/conda.sh</span><br><span class="line">conda activate qiime2</span><br><span class="line"><span class="built_in">mkdir</span> qualityTest</span><br><span class="line"><span class="built_in">cd</span> qualityTest</span><br><span class="line">fastp -i ../01.CleanData/D1/D1.fastq -o D1.filterd.fq</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/19/16S-amplicon-tutorial/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/23/upload-16s-amplicon-sequencing-raw-data-to-NCBI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bubble_fertilizer_logo_1024x1024.png">
+      <meta itemprop="name" content="XYZ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aerith Omics">
+      <meta itemprop="description" content="This blog is about tools for metagenomic and metaproteomic and stable isotope probing research">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Aerith Omics">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/23/upload-16s-amplicon-sequencing-raw-data-to-NCBI/" class="post-title-link" itemprop="url">Upload 16s amplicon sequencing raw data to NCBI</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-23 10:06:35" itemprop="dateCreated datePublished" datetime="2021-02-23T10:06:35-05:00">2021-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-18 00:04:32" itemprop="dateModified" datetime="2023-04-18T00:04:32-04:00">2023-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/16S/" itemprop="url" rel="index"><span itemprop="name">16S</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>187</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Introduction-to-16S-and-ITS-rRNA-Sequencing"><a href="#Introduction-to-16S-and-ITS-rRNA-Sequencing" class="headerlink" title="Introduction to 16S and ITS rRNA Sequencing"></a>Introduction to 16S and ITS rRNA Sequencing</h3><p>16S and Internal Transcribed Spacer (ITS) ribosomal RNA (rRNA) sequencing are common amplicon sequencing methods used to identify and compare bacteria or fungi present within a given sample. Both ITS and 16S rRNA gene sequencing are well-established methods for comparing sample phylogeny and taxonomy from complex microbiomes or environments that are difficult or impossible to study.</p>
+<h3 id="register-a-NCBI-account"><a href="#register-a-NCBI-account" class="headerlink" title="register a NCBI account"></a>register a NCBI account</h3><p><img src="/2021/02/23/upload-16s-amplicon-sequencing-raw-data-to-NCBI/1.png" alt="img"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/23/upload-16s-amplicon-sequencing-raw-data-to-NCBI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XYZ All Rights Reserved</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">4k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">14 mins.</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
